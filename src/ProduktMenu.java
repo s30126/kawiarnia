@@ -37,8 +37,14 @@ public class ProduktMenu {
         return liczbaProduktow;
     }
 
+    @Override
     public String toString() {
-        return this.nazwa + "\n" + this.kategoria + "\n" + this.cena + "\n" + this.kod + "\n";
+        return "ProduktMenu{" +
+                "kod='" + kod + '\'' +
+                ", nazwa='" + nazwa + '\'' +
+                ", cena=" + cena +
+                ", kategoria='" + kategoria + '\'' +
+                '}';
     }
 
     public boolean equals(Object o) {
