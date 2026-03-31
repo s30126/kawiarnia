@@ -3,9 +3,9 @@ public class Main {
 
         KlientKawiarni klient1 = new KlientKawiarni(01, "Anna", "Nowak", "anna@gmail.com");
 
-        ProduktMenu produkt1 = new ProduktMenu("11", "kawa", 10.50, "napoje");
-        ProduktMenu produkt2 = new ProduktMenu("12", "herbata", 8, "napoje");
-        ProduktMenu produkt3 = new ProduktMenu("13", "ciastko", 9.50, "jedzenie");
+        ProduktMenu kawa = new ProduktMenu("11", "kawa", 10.50, "napoje");
+        ProduktMenu herbata = new ProduktMenu("12", "herbata", 8, "napoje");
+        ProduktMenu ciastko = new ProduktMenu("13", "ciastko", 9.50, "jedzenie");
 
         /* Test działania klasy ProduktMenu
 
@@ -21,9 +21,6 @@ public class Main {
         System.out.println(klient1.equals(klient1));
 
          */
-
-
-
 
     }
 }
