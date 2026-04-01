@@ -1,26 +1,28 @@
 public class Main {
     public static void main(String[] args) {
 
-        KlientKawiarni klient1 = new KlientKawiarni(01, "Anna", "Nowak", "anna@gmail.com");
+        ProduktMenu p1 = new ProduktMenu("K-01", "Espresso", 9.0, "kawa");
+        ProduktMenu p2 = new ProduktMenu("K-02", "Cappuccino", 13.5, "kawa");
+        ProduktMenu p3 = new ProduktMenu("D-01", "Sernik", 16.0, "deser");
 
-        ProduktMenu kawa = new ProduktMenu("11", "kawa", 10.50, "napoje");
-        ProduktMenu herbata = new ProduktMenu("12", "herbata", 8, "napoje");
-        ProduktMenu ciastko = new ProduktMenu("13", "ciastko", 9.50, "jedzenie");
+        KlientKawiarni klient = new KlientKawiarni(100, "Julia", "Mazur", "j.mazur@mail.pl");
 
-        /* Test działania klasy ProduktMenu
+        Zamowienie zamowienie = new Zamowienie(klient);
+        zamowienie.dodajProdukt(p1);
+        zamowienie.dodajProdukt(p2);
+        zamowienie.dodajProdukt(p3);
 
-        System.out.println(ProduktMenu.getLiczbaProduktow());
-        System.out.println(produkt1.toString());
+        System.out.println(klient);
+        System.out.println(zamowienie);
+        System.out.println("Łączna wartość: " + zamowienie.policzWartosc());
+        System.out.println("Liczba pozycji: " + zamowienie.policzLiczbeProduktow());
+        System.out.println("Liczba produktów utworzonych w systemie: " + ProduktMenu.getLiczbaProduktow());
 
-         */
+        ProduktMenu kopiaEspresso = new ProduktMenu("K-01", "Espresso duplikat", 9.0, "kawa");
+        System.out.println("Czy produkty są równe? " + p1.equals(kopiaEspresso));
 
-        /* Test działania klasy KlientKawiarni
-
-        System.out.println(klient1.zwrocDaneKlienta(klient1));
-        System.out.println(klient1.toString());
-        System.out.println(klient1.equals(klient1));
-
-         */
+        zamowienie.oznaczJakoOplacone();
+        System.out.println(zamowienie);
 
     }
 }

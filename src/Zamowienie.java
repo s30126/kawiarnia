@@ -8,27 +8,37 @@ public class Zamowienie {
     private boolean oplacone;
     private static int kolejnyNumer = 1;
 
+    public Zamowienie(KlientKawiarni klient) {
+        this.numerZamowienia = kolejnyNumer;
+        kolejnyNumer++;
+        this.oplacone = false;
+        this.produkty = new ArrayList<>();
+    }
+
     public void dodajProdukt(ProduktMenu produkt) {
         this.produkty.add(produkt);
     }
 
-    /* Nie umiem :(
-
-    public void policzWartosc(Zamowienie zamowienie) {
-
+    public double policzWartosc() {
+        double suma = 0.0;
+        for(int i = 0; i < this.produkty.size(); i++) {
+            ProduktMenu p = this.produkty.get(i);
+            suma = suma + p.getCena();
+        }
+        return suma;
     }
 
-     */
 
-    public void policzLiczbeProduktow() {
-        System.out.println("liczba produktów=" + produkty.size());
+    public int policzLiczbeProduktow() {
+        return produkty.size();
     }
 
-    public boolean oznaczJakoOplacone(Zamowienie zamowienie) {
-        return oplacone = true;
+    public void oznaczJakoOplacone() {
+        this.oplacone = true;
     }
+
     public static int pobierzKolejnyNumer() {
-        return kolejnyNumer++;
+        return kolejnyNumer;
     }
 
     @Override

@@ -14,8 +14,8 @@ public class KlientKawiarni {
         this.email = email;
     }
 
-    public String zwrocDaneKlienta (KlientKawiarni klient) {
-        return klient.imie + " " + klient.nazwisko + " " + klient.idKlienta + " " + klient.email;
+    public String zwrocDaneKlienta () {
+        return this.imie + " " + this.nazwisko + " " + this.idKlienta + " " + this.email;
     }
 
     @Override
